@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="@string/app_short_name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/LoginInputFields"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="30dp"
+        app:layout_constraintBottom_toTopOf="@id/LoginButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Header">
+
+        <TableRow
+            android:id="@+id/StaffIDInputField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/StaffIDLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:text="@string/staff_id_label_text"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/StaffIDTextInput"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/staff_id_text_input_hint"
+                android:inputType="text"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/PasswordInputField"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/PasswordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal"
+                android:text="@string/password_label_text"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/PasswordTextInput"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="@string/password_text_input_hint"
+                android:inputType="text"
+                android:textSize="16sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ForgotPasswordRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/ForgotPasswordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forgot_password_text"
+                android:textSize="16sp" />
+        </TableRow>
+
+    </TableLayout>
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="sans-serif"
+        android:paddingStart="40dp"
+        android:paddingTop="20dp"
+        android:paddingEnd="40dp"
+        android:paddingBottom="20dp"
+        android:text="@string/login_btn_text"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LoginInputFields" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

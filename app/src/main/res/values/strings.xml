@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kato-Android-Application</string>
+    <string name="app_short_name">Kato</string>
+    <string name="staff_id_label_text">Staff ID:</string>
+    <string name="password_label_text">Password:</string>
+    <string name="staff_id_text_input_hint">Enter your staff ID here...</string>
+    <string name="password_text_input_hint">Enter your password here...</string>
+    <string name="login_btn_text">Login</string>
+    <string name="forgot_password_text"><u>Forgot password</u></string>
+    <string name="welcome_header_text">Welcome to Kato. What can I help you with today?</string>
+</resources>
