@@ -9,6 +9,11 @@ public class App {
 
     public String tag = "";
 
+    /**
+     * Note: This class is solely to be used for development and testing purposes.
+     */
+    public Tester tester = new Tester();
+
     private App()
     {
 

@@ -8,4 +8,8 @@
     <string name="login_btn_text">Login</string>
     <string name="forgot_password_text"><u>Forgot password</u></string>
     <string name="welcome_header_text">Welcome to Kato. What can I help you with today?</string>
+    <string name="ok_btn_text">OK</string>
+    <string name="invalid_credentials_text">
+        You have entered an invalid/incorrect staff ID and/or password. Please try again.
+    </string>
 </resources>

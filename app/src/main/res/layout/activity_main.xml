@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <TextView
         android:id="@+id/Header"
         android:layout_width="wrap_content"
@@ -107,6 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:elevation="2dp"
         android:fontFamily="sans-serif"
         android:paddingStart="40dp"
         android:paddingTop="20dp"
@@ -120,4 +120,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginInputFields" />
 
+    <fragment
+        android:id="@+id/InvalidCredentialsMessagePopupBox"
+        android:name="com.example.kato_android_application.MessagePopupBox"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </fragment>
 </androidx.constraintlayout.widget.ConstraintLayout>

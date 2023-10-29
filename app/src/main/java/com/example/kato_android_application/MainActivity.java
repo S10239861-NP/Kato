@@ -1,8 +1,12 @@
 package com.example.kato_android_application;
 
+import static android.view.View.INVISIBLE;
+import static android.view.View.VISIBLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText passwordTextInput = null;
 
     private Button loginButton = null;
+
+    private MessagePopupBox invalidCredentialsMessagePopupBox = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +36,34 @@ public class MainActivity extends AppCompatActivity {
 
         this.loginButton = this.findViewById(R.id.LoginButton);
 
+        this.invalidCredentialsMessagePopupBox = (MessagePopupBox) this.getSupportFragmentManager().findFragmentById(
+            R.id.InvalidCredentialsMessagePopupBox
+        );
+
+        this.invalidCredentialsMessagePopupBox.setVisibility(INVISIBLE);
+
         this.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String enteredStaffID = MainActivity.this.staffIDTextInput.getText().toString();
+
+                String enteredPassword = MainActivity.this.passwordTextInput.getText().toString();
+
+                for (User placeholderUser : App.instance.tester.placeholderUsers)
+                {
+                    if (enteredStaffID == placeholderUser.staffID && enteredPassword == placeholderUser.password)
+                    {
+                        Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
+
+                        MainActivity.this.startActivity(intent);
+
+                        return;
+                    }
+
+                    MainActivity.this.invalidCredentialsMessagePopupBox.setVisibility(VISIBLE);
+                }
 
 
-                Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
-
-                MainActivity.this.startActivity(intent);
             }
         });
     }
